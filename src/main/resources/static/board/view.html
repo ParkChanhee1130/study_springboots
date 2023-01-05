@@ -13,28 +13,17 @@
     />
   </head>
   <body>
-    <div>/board/form</div>
-    <form action="/board/form" method="post">
-      <div>
-        <label for="title">TITLE</label>
-        <input type="text " class="form-control" name="title" id="title" />
-      </div>
-      <div>
-        <label for="userName">GENRE</label>
-        <input type="text" class="form-control" name="userName" id="userName" />
-      </div>
-      <div>
-        <label for="content">DIRECTOR</label>
-        <input type="text" class="form-control" name="content" id="content" />
-      </div>
-      <div>
-        <label for="date">ACTORS</label>
-        <input type="date" class="form-control" name="date" id="date" />
-      </div>
-      <div>
-        <button>SUBMIT</button>
-      </div>
-    </form>
+    <div>board/view</div>
+    <div>TITLE</div>
+    <div>GENRE</div>
+    <div>DIRECTOR</div>
+    <div>ACTORS</div>
+    <div>
+      <form action="/board/list"><button>GO LIST</button></form>
+    </div>
+    <div>
+      <form action="/board/edit"><button>EDIT</button></form>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
