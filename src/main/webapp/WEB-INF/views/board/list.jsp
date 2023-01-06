@@ -14,7 +14,7 @@
 </head>
 <body>
   <div class="container text-center fs-5">MOVIE LIST</div>
-      <table class="table table-bordered">
+      <table class="table table-bordered text-center">
         <tr>
           <td>TITLE</td>
           <td>GENRE</td>
