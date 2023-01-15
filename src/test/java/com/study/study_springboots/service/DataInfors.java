@@ -53,19 +53,24 @@ public class DataInfors {
         boardBean.setTitle("Mark");
         boardBean.setContent("Otto");
         boardBean.setUserName("@mdo");
+        boardBean.setDate("2022.11.11");
         membersList.add(boardBean);
 
         boardBean = new BoardBean();
         boardBean.setTitle("Jacob");
         boardBean.setContent("Thornton");
         boardBean.setUserName("@fat");
+        boardBean.setDate("2022.12.12");
         membersList.add(boardBean);
 
         boardBean = new BoardBean();
         boardBean.setTitle("Larry");
         boardBean.setContent("Bird");
         boardBean.setUserName("@twitter");
+        boardBean.setDate("2022.12.31");
         membersList.add(boardBean);
         return membersList;
     } 
+
+    
 }
