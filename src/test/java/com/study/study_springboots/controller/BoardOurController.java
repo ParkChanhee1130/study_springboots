@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.study.study_springboots.beans.BoardBean;
 import com.study.study_springboots.service.DataInfors;
 
+
 // * Cast 
 // - use bootstrap
 // - 항목 : title, content,userName, date
@@ -19,7 +20,7 @@ import com.study.study_springboots.service.DataInfors;
 //   + view.jsp(/board_our/view) -> edit.jsp(/board_our/edit) -> list.jsp(/board_our/save)
 @Controller
 @RequestMapping(value = "/board_our")
-public class BoardOurRController {
+public class BoardOurController {
     @RequestMapping(value = "/edit", method = RequestMethod.POST)  
     public ModelAndView edit(ModelAndView modelAndView) {
         modelAndView.setViewName("board_our/edit");
@@ -36,8 +37,13 @@ public class BoardOurRController {
         modelAndView.setViewName("board_our/list");
         return modelAndView;    // --> Dispatcher Servlet
     }
-    @RequestMapping(value = "/view", method = RequestMethod.GET)  
-    public ModelAndView view(ModelAndView modelAndView) {
+
+    // localhost:8080/view/U02, localhost:8080/view/U04
+    // @RequestMapping(value = "/view", method = RequestMethod.GET)  
+    // public ModelAndView view(@RequestParam String uid, ModelAndView modelAndView) {
+        // System.out.println("uid : "+uid);
+    @RequestMapping(value = "/view/{action_uid}", method = RequestMethod.GET)  
+    public ModelAndView view(@PathVariable String action_uid, ModelAndView modelAndView) {
         DataInfors dataInfors = new DataInfors();
         BoardBean boardBean = dataInfors.getDataWithMamberBean();
         modelAndView.addObject("boardBean", boardBean);
@@ -51,8 +57,9 @@ public class BoardOurRController {
         return modelAndView;
     }
     @RequestMapping(value = "/save", method = RequestMethod.POST)    
-    public ModelAndView save(ModelAndView modelAndView) {
-        // insert biz
+    // public ModelAndView save(@RequestParam HashMap<String, String> params,  ModelAndView modelAndView) {
+    public ModelAndView save(BoardBean boardBean, ModelAndView modelAndView) {
+            // insert biz
         modelAndView.setViewName("board_our/list");
         return modelAndView;
     }

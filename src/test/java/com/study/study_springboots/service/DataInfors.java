@@ -70,7 +70,12 @@ public class DataInfors {
         boardBean.setDate("2022.12.31");
         membersList.add(boardBean);
         return membersList;
-    } 
+    }
+
+
+
+
+
 
     
 }
